@@ -1,15 +1,15 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import Ejemplo from '../views/ejemplo.vue'
 import Paises from '../views/paises.vue'
-import detalleRepuestos from '../views/detalleRepuestos.vue'
+import DetalleRepuestos from '../views/detalleRepuestos.vue'
 import Servicios from '../views/servicios.vue'
 import Registros from '../views/registros.vue'
 import Repuestos from '../views/repuestos.vue'
 import Vehiculos from '../views/vehiculos.vue'
 import Propietarios from '../views/propietarios.vue'
 import Contactos from '../views/contactos.vue'
-import registrosFechas from '../views/registrosFechas.vue'
-import modeloAuto from '../views/modeloAuto.vue'
+import RegistrosFechas from '../views/registrosFechas.vue'
+import ModeloAuto from '../views/modeloAuto.vue'
 import Mecanicos from '../views/mecanicos.vue'
 
 const routes =[
@@ -57,17 +57,17 @@ const routes =[
     {
     path:'/registrosfechas',
     name:'registrosFechas',
-    component:registrosFechas,
+    component:RegistrosFechas,
     },
     {
     path:'/modeloauto',
     name:'modelosautos',
-    component:modeloAuto,
+    component:ModeloAuto,
     },
     {
     path:'/detallerepuestos',
     name:'Detallerepuestos',
-    component:detalleRepuestos,
+    component:DetalleRepuestos,
     },
     {
     path:'/paises',
