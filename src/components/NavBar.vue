@@ -3,6 +3,7 @@
       :default-active="activeIndex"
       class="el-menu-demo"
       mode="horizontal"
+      background-color= #a4daf5
       :ellipsis="false"
       @select="handleSelect"
     >
@@ -36,13 +37,9 @@
   }
 
  header, .el-menu--horizontal{
-    background-color:rgb(0, 0, 0) ;
     font-family: poppins;
   }
   li.el-sub-menu > div{
     font-size: 17px;
-  }
-  .el-menu--horizontal>.el-sub-menu .el-sub-menu__title{
-    color: aliceblue;
   }
   </style>

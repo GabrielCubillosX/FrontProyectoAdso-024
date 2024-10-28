@@ -1,8 +1,10 @@
 <template>
-    <el-row class="tac">
+    <el-row>
       <el-col :span="12">
         <el-menu
-          default-active="1"
+          
+          :default-active="1"
+          router
           class="el-menu-vertical-demo"
           @open="handleOpen"
           @close="handleClose"
@@ -52,3 +54,7 @@
     console.log(key, keyPath)
   }
   </script>
+
+  <style scoped>
+
+  </style>
