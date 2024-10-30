@@ -1,60 +1,51 @@
 <template>
-    <el-row>
-      <el-col :span="12">
-        <el-menu
-          
-          :default-active="1"
-          router
-          class="el-menu-vertical-demo"
-          @open="handleOpen"
-          @close="handleClose"
-        >
-          <el-sub-menu index="1">
-            <template #title>
-              <el-icon><location /></el-icon>
-              <span>Navigator One</span>
-            </template>
-            <el-menu-item-group title="Group One">
-              <el-menu-item index="1-1">item one</el-menu-item>
-              <el-menu-item index="1-2">item two</el-menu-item>
-            </el-menu-item-group>
-        
-          </el-sub-menu>
-          <el-menu-item index="2">
-            <el-icon><icon-menu /></el-icon>
-            <span>Navigator Two</span>
-          </el-menu-item>
-          <el-menu-item index="3" disabled>
-            <el-icon><document /></el-icon>
-            <span>Navigator Three</span>
-          </el-menu-item>
-          <el-menu-item index="4">
-            <el-icon><setting /></el-icon>
-            <span>Navigator Four</span>
-          </el-menu-item>
-        </el-menu>
-      </el-col>
-      <el-col :span="12">
 
-      </el-col>
-    </el-row>
-  </template>
-  
-  <script lang="ts" setup>
-  import {
-    Document,
-    Menu as IconMenu,
-    Location,
-    Setting,
-  } from '@element-plus/icons-vue'
-  const handleOpen = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath)
-  }
-  const handleClose = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath)
-  }
-  </script>
+  <el-menu
+  :default-active="$route.path"
+  router
+    class="el-menu-vertical-demo"
+    background-color="#242629"
+    text-color="#fff"
+    collapse-transition
+  >
+    <el-sub-menu index="1">
+      <template #title>
+        <el-icon><location /></el-icon>
+        <span>Administrador</span>
+      </template>
 
-  <style scoped>
+      <el-menu-item index="personas">Personas</el-menu-item>
+      <el-menu-item index="cargos">Cargos</el-menu-item>
+      <el-menu-item index="pais">Paises</el-menu-item>
+    </el-sub-menu>
+    <el-sub-menu index="2">
+      <template #title>
+        <el-icon><location /></el-icon>
+        <span>Configuracion</span>
+      </template>
 
-  </style>
+      <el-menu-item index="1-2">Personas</el-menu-item>
+      <el-menu-item index="1-3">Cargos</el-menu-item>
+      <el-menu-item index="pais">Paises</el-menu-item>
+    </el-sub-menu>
+  </el-menu>
+</template>
+
+<script lang="ts" setup>
+import {Location} from '@element-plus/icons-vue';
+</script>
+
+<style scoped>
+html, body {
+margin: 0;
+padding: 0;
+/* height: 100%; */
+}
+
+
+
+.el-menu-vertical-demo {
+width: 250px;
+min-height: 100%;
+}
+</style>

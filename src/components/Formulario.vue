@@ -1,27 +1,90 @@
 <template>
-<div class="container_header" v-if="isVisible">
-<h2>modulo de {{titulo}}</h2>
-<el-row justify="center" align="middle">
-<el-button type="primary">Cancelar</el-button>
-<el-button type="primary">Guardar</el-button>
-
-</el-row>
-<slot name="slotForm"> 
-
-</slot>
-
-</div>
-</template>
-
-<script setup>
-import {computed,ref} from 'vue';
-const propiedad =defineProps({
-    titulo:String,
-    mostrar:Boolean
-})
-
-const isVisible = computed(()=>propiedad.mostrar)
-</script>
-
-<style scoped>
-</style>
+    <el-container v-show="isVisible" class="form-container">
+      
+      <el-row :gutter="5" class="form-container__row">
+        <el-col :xs="18" :sm="18" :md="18" :lg="22" :xl="22" class="form-container__title-col">
+          <el-button text class="form-container__title-button" size="large">
+            {{ titulo }}
+          </el-button>
+        </el-col>
+        <el-col :xs="6" :sm="6" :md="6" :lg="2" :xl="2" class="form-container__button-group">
+          <el-button size="large" class="form-container__button-cancel" @click="irAtras">Cancelar</el-button>
+          <el-button type="primary" size="large" class="form-container__button-submit" @click="submit">
+       guardar
+          </el-button>
+        </el-col>
+      </el-row>
+  
+      <el-main class="form-container__main">
+        <slot name="slotForm"></slot>
+      </el-main>
+    </el-container>
+  </template>
+  
+  <script setup>
+  import { computed } from 'vue';
+  
+  const propiedad = defineProps({
+    titulo: String,
+    isEdit: Boolean,
+    isOpen: Boolean,
+  });
+  
+  
+  
+  const isVisible = computed(() => propiedad.isOpen);
+  
+  const $emit = defineEmits(['update:is-open']);
+  
+  
+  const irAtras = ()  => {
+    $emit('update:is-open', false);
+  };
+  
+  </script>
+  
+  <style scoped>
+  .form-container {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 5px;
+    width: 100%;
+    z-index: 90;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh + 42%);
+  }
+  
+  
+  
+  .form-container__row {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  /* estilos del titulo delformulario  */
+  .form-container__title-button {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  
+  /* alinear los botones en la parte soperior derecha */
+  .form-container__button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .form-container__button-submit {
+    background-color: #2fbe98;
+    border: none;
+    color: white;
+  }
+  
+  
+  </style>

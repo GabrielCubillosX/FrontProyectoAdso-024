@@ -1,10 +1,18 @@
 <template>
-<h1>Fromulario Contactos</h1>
-</template>
+    <el-card style="max-width: 100%">
+      <el-row>
+        <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
+            <h1>Formulario Contactos</h1>
+        </el-col>
+      </el-row>
+    </el-card>
+  </template>
 
-<script>
+
+<script setup>
+
+
 </script>
 
-
-<style>
+<style scoped>
 </style>
