@@ -9,11 +9,11 @@
     :size="formSize"
     status-icon
   >
-    <el-form-item label="Nombre" prop="nombre">
-      <el-input v-model="formulario.nombre" />
+    <el-form-item label="Telefono" prop="telefono">
+      <el-input v-model="formulario.telefono" />
     </el-form-item>
-    <el-form-item label="Salario" prop="salario">
-      <el-input v-model="formulario.salario" />
+    <el-form-item label="Email" prop="email">
+      <el-input v-model="formulario.email" />
     </el-form-item>
     <el-form-item label="Area" prop="area">
       <el-select v-model="formulario.area" placeholder="Seleccione un area">
@@ -46,27 +46,27 @@ const propiedad = defineProps({
 const formSize = ref('default')
 const formRef = ref()
 const formulario = reactive({
-  nombre: '',
-  salario: '',
+  telefono: '',
+  email: '',
   area: '',
 
 })
 
 
 const rulesForm = reactive({
-  nombre: [
-    { required: true, message: 'Por favor ingrese el nombre', trigger: 'blur' }
+  telefono: [
+    { required: true, message: 'Por favor ingrese el telefono', trigger: 'blur' }
   ],
-  salario: [
+  email: [
     {
       required: true,
-      message: 'Ingrese el salario',
+      message: 'Ingrese el email',
       trigger: 'blur',
     },
   ],
   area: [
     {
-      required: true,
+      required: false,
       message: 'Seleccione un valor',
       trigger: 'blur',
     },

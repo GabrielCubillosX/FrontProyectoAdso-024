@@ -18,8 +18,8 @@
           </Formulario>
 
           <el-table :data="Contactos" stripe style="width: 100%" >
-              <el-table-column prop="telefono" label="telefono"  />
-              <el-table-column prop="email" label="email"  />      
+              <el-table-column prop="telefono" label="Telefono"  />
+              <el-table-column prop="email" label="Email"  />      
               <el-table-column prop="id_area" label="Area"  />      
               <el-table-column fixed="right" label="Acciones" min-width="120">
                   <template #default>
