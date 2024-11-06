@@ -15,19 +15,10 @@
       </template>
 
       <el-menu-item index="personas">Personas</el-menu-item>
-      <el-menu-item index="cargos">Cargos</el-menu-item>
+      <el-menu-item index="contactos">Contactos</el-menu-item>
       <el-menu-item index="pais">Paises</el-menu-item>
     </el-sub-menu>
-    <el-sub-menu index="2">
-      <template #title>
-        <el-icon><location /></el-icon>
-        <span>Configuracion</span>
-      </template>
 
-      <el-menu-item index="1-2">Personas</el-menu-item>
-      <el-menu-item index="1-3">Cargos</el-menu-item>
-      <el-menu-item index="pais">Paises</el-menu-item>
-    </el-sub-menu>
   </el-menu>
 </template>
 
