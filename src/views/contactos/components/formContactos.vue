@@ -15,7 +15,7 @@
     <el-form-item label="Email" prop="email">
       <el-input v-model="formulario.email" />
     </el-form-item>
-    <el-form-item label="Area" prop="area">
+    <!-- <el-form-item label="Area" prop="area">
       <el-select v-model="formulario.area" placeholder="Seleccione un area">
         <el-option v-for="area in areas"
         :key="area.id"
@@ -25,7 +25,7 @@
         />
    
       </el-select>
-    </el-form-item>
+    </el-form-item> -->
 
   </el-form>
 </template>

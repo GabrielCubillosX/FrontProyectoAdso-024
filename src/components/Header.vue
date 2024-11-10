@@ -43,8 +43,13 @@ defineProps({
 
 .padded-button{
     padding: 20px;
-    background-color: purple;
+    background-color: rgb(255, 79, 10);
     border: none;
     color: white;
+}
+.padded-button:hover{
+    padding: 20px;
+    background-color: rgb(34, 10, 255);
+    border: rgb(255, 79, 10) solid 3px;
 }
 </style>

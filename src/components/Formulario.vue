@@ -94,6 +94,10 @@ const submit=()=>{
   border: none;
   color: white;
 }
-
+.form-container__button-submit:hover {
+  background-color: #2f9dbe;
+  border: black solid 2px;
+  color: white;
+}
 
 </style>

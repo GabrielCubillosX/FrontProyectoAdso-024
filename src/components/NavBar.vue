@@ -9,10 +9,11 @@
     >
       <el-menu-item index="0">
         <img
-          style="width: 100px"
-          src=""
-          alt="Element logo"
+          style="width: 55px"
+          src="https://cdn.worldvectorlogo.com/logos/volkswagen-10.svg"
+          alt="Taller Volkswagen"
         />
+        <h1 style="margin-left: 10px;">Taller Volkswagen</h1>
       </el-menu-item>
       <el-sub-menu index="1">
         <template #title>Gabriel Cubillos</template>
@@ -41,5 +42,9 @@
   }
   li.el-sub-menu > div{
     font-size: 17px;
+  }
+
+  #app > section > header > ul{
+    border-bottom-right-radius: 20px;
   }
   </style>

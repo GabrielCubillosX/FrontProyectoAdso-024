@@ -14,9 +14,12 @@
         <span>Administrador</span>
       </template>
 
-      <el-menu-item index="personas">Personas</el-menu-item>
       <el-menu-item index="contactos">Contactos</el-menu-item>
-      <el-menu-item index="pais">Paises</el-menu-item>
+      <el-menu-item index="mecanicos">Mecanicos</el-menu-item>
+      <el-menu-item index="propietarios">Propietarios</el-menu-item>
+      <el-menu-item index="repuestos">Repuestos</el-menu-item>
+      <el-menu-item index="servicios">Servicios</el-menu-item>
+      <el-menu-item index="vehiculos">Vehiculos</el-menu-item>
     </el-sub-menu>
 
   </el-menu>
