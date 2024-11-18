@@ -1,16 +1,14 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import LayoutMain from '../components/LayoutMain.vue'
+import DetalleRepuestos from '../views/detalleRepuestos/detalleRepuestos.vue'
+import Servicios from '../views/servicios/servicios.vue'
 import Login from '../components/Login.vue'
-import DetalleRepuestos from '../views/detalleRepuestos.vue'
-import Servicios from '../views/servicios.vue'
-import Registros from '../views/registros.vue'
-import Repuestos from '../views/repuestos.vue'
-import Vehiculos from '../views/vehiculos.vue'
-import Propietarios from '../views/propietarios.vue'
+import Repuestos from '../views/repuestos/repuestos.vue'
+import Vehiculos from '../views/vehiculo/vehiculos.vue'
+import Propietarios from '../views/propietarios/propietarios.vue'
 import Contactos from '../views/contactos/contactos.vue'
-import RegistrosFechas from '../views/registrosFechas.vue'
-import ModeloAuto from '../views/modeloAuto.vue'
-import Mecanicos from '../views/mecanicos.vue'
+import ModeloAuto from '../views/modeloAuto/modeloAuto.vue'
+import Mecanicos from '../views/mecanicos/mecanicos.vue'
 
 const routes =[
     {
@@ -34,11 +32,6 @@ const routes =[
     component:Servicios,
     },
     {
-    path:'/registros',
-    name:'Registros',
-    component:Registros,
-    },
-    {
     path:'/repuestos',
     name:'Repuestos',
     component:Repuestos,
@@ -57,11 +50,6 @@ const routes =[
     path:'/contactos',
     name:'Ejemplo',
     component: Contactos,
-    },
-    {
-    path:'/registrosfechas',
-    name:'registrosFechas',
-    component:RegistrosFechas,
     },
     {
     path:'/modeloauto',

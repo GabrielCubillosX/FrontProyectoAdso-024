@@ -1,11 +1,14 @@
 <template>
   <el-form ref="formRef" style="max-width: 100%" :model="formulario" :rules="rulesForm" label-width="auto"
     :size="formSize" status-icon>
-    <el-form-item label="Telfono" prop="telefono">
-      <el-input v-model="formulario.telefono" @input="validarNumeros" />
+    <el-form-item label="Nombres" prop="nombres">
+      <el-input v-model="formulario.nombres" />
     </el-form-item>
-    <el-form-item label="Email" prop="email">
-      <el-input v-model="formulario.email" />
+    <el-form-item label="Apellidos" prop="apellidos">
+      <el-input v-model="formulario.apellidos" />
+    </el-form-item>
+    <el-form-item label="Telefono" prop="telefono">
+      <el-input v-model="formulario.telefono" @input="validarNumeros" />
     </el-form-item>
     <!-- <el-form-item label="Area" prop="area">
       <el-select v-model="formulario.area" placeholder="Seleccione un area">
@@ -27,39 +30,35 @@ const propiedad = defineProps({
   dataValue: Object,
 });
 
-function validarNumeros() {
-  formulario.telefono = formulario.telefono.replace(/[^0-9]/g, '');
-}
-
 const formSize = ref('default')
 const formRef = ref()
 const formulario = reactive({
+  nombres: '',
+  apellidos: '',
   telefono: '',
-  email: '',
-  area: '',
 })
 
 const datosFormulario = () => {
+  formulario.nombres = propiedad.dataValue[0].nombres;
+  formulario.apellidos = propiedad.dataValue[0].apellidos;
   formulario.telefono = propiedad.dataValue[0].telefono;
-  formulario.email = propiedad.dataValue[0].email;
-  formulario.area = propiedad.dataValue[0].id_area;
 }
 
 const rulesForm = reactive({
-  telefono: [
-    { required: true, message: 'Por favor ingrese el telefono', trigger: 'blur' }
+  nombres: [
+    { required: true, message: 'Por favor ingrese el Nombre', trigger: 'blur' }
   ],
-  email: [
+  apellidos: [
     {
       required: true,
-      message: 'Ingrese el email',
+      message: 'Ingrese el Apellido',
       trigger: 'blur',
     },
   ],
-  area: [
+  telefono: [
     {
-      required: false,
-      message: 'Seleccione un valor',
+      required: true,
+      message: 'Ingrese el Telefono',
       trigger: 'blur',
     },
   ],
@@ -79,6 +78,12 @@ const validarFormulario = () => {
       }
     })
   })
+}
+
+// Validación para asegurarse de que el campo solo tenga números
+const validarNumeros = () => {
+  formulario.telefono = formulario.telefono.replace(/[^0-9]/g, '');  // Solo deja los números
+  formulario.telefono = formulario.telefono.toString(); // Asegura que se guarde como string
 }
 
 watch(

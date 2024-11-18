@@ -1,18 +1,12 @@
 <template>
   <el-form ref="formRef" style="max-width: 100%" :model="formulario" :rules="rulesForm" label-width="auto"
     :size="formSize" status-icon>
-    <el-form-item label="Telfono" prop="telefono">
-      <el-input v-model="formulario.telefono" @input="validarNumeros" />
+    <el-form-item label="Modelo de Auto Repuesto" prop="modeloauto_repuesto">
+      <el-input v-model="formulario.modeloauto_repuesto" />
     </el-form-item>
-    <el-form-item label="Email" prop="email">
-      <el-input v-model="formulario.email" />
+    <el-form-item label="Marca del Proveedor" prop="marcaproveedor">
+      <el-input v-model="formulario.marcaproveedor" />
     </el-form-item>
-    <!-- <el-form-item label="Area" prop="area">
-      <el-select v-model="formulario.area" placeholder="Seleccione un area">
-        <el-option v-for="area in areas" :key="area.id" :label="area.nombre" :value="area.id" />
-      </el-select>
-    </el-form-item> -->
-
   </el-form>
 </template>
 
@@ -27,39 +21,26 @@ const propiedad = defineProps({
   dataValue: Object,
 });
 
-function validarNumeros() {
-  formulario.telefono = formulario.telefono.replace(/[^0-9]/g, '');
-}
-
 const formSize = ref('default')
 const formRef = ref()
 const formulario = reactive({
-  telefono: '',
-  email: '',
-  area: '',
+  modeloauto_repuesto: '',
+  marcaproveedor: '',
 })
 
 const datosFormulario = () => {
-  formulario.telefono = propiedad.dataValue[0].telefono;
-  formulario.email = propiedad.dataValue[0].email;
-  formulario.area = propiedad.dataValue[0].id_area;
+  formulario.modeloauto_repuesto = propiedad.dataValue[0].modeloauto_repuesto;
+  formulario.marcaproveedor = propiedad.dataValue[0].marcaproveedor;
 }
 
 const rulesForm = reactive({
-  telefono: [
-    { required: true, message: 'Por favor ingrese el telefono', trigger: 'blur' }
+  modeloauto_repuesto: [
+    { required: true, message: 'Por favor ingrese el modelo del auto repuesto', trigger: 'blur' }
   ],
-  email: [
+  marcaproveedor: [
     {
       required: true,
-      message: 'Ingrese el email',
-      trigger: 'blur',
-    },
-  ],
-  area: [
-    {
-      required: false,
-      message: 'Seleccione un valor',
+      message: 'Ingrese la marca del proveedor',
       trigger: 'blur',
     },
   ],

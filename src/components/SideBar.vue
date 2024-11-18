@@ -20,6 +20,8 @@
       <el-menu-item index="repuestos">Repuestos</el-menu-item>
       <el-menu-item index="servicios">Servicios</el-menu-item>
       <el-menu-item index="vehiculos">Vehiculos</el-menu-item>
+      <el-menu-item index="modeloauto">Modelo Vehiculos</el-menu-item>
+      <el-menu-item index="detallerepuestos">Informacion Repuestos</el-menu-item>
     </el-sub-menu>
 
   </el-menu>
@@ -41,5 +43,6 @@ padding: 0;
 .el-menu-vertical-demo {
 width: 250px;
 min-height: 100%;
+border-bottom-right-radius: 20px;
 }
 </style>
