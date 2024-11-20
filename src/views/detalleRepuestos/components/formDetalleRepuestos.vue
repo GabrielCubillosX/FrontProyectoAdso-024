@@ -14,7 +14,7 @@
 import { onMounted, reactive, ref, watch } from 'vue'
 
 const propiedad = defineProps({
-  areas: {
+  detalles: {
     type: Array,
     required: true,
   },

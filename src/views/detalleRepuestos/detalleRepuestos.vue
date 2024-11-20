@@ -10,7 +10,7 @@
                     <el-row :gutter="20">
                         <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
                             <FormDetalleRepuestos v-model:is-open="mostrarFormulario" :is-edit="editandoFormulario" ref="formRef"
-                                :areas="areas" :dataValue="dataRepuestosById" />
+                                :detalles="detalles" :dataValue="dataRepuestosById" />
                         </el-col>
                     </el-row>
                 </template>
@@ -49,7 +49,7 @@
   const editandoFormulario = ref(false)
   const formRef = ref()
   const dataRepuestosById = ref()
-  const areas = ref([])
+  const detalles = ref([])
   const repuestos = ref([])
   
   const abrirFormulario = () => {
@@ -200,23 +200,24 @@
     }
   }
   
-  const getAreas = async () => {
-    const url = 'http://127.0.0.1:8000/api/areas/datos'
+  const getDetalles = async () => {
+    const url = 'http://127.0.0.1:8000/api/detalle_repuestos/datos'
   
     try {
         axios.get(url)
             .then(function (response) {
-                areas.value = response.data.result
+                detalles.value = response.data.result
             })
             .catch(function (error) {
                 console.log(error);
             });
     } catch (error) {
-        console.error('Error obteniendo áreas', error)
+        console.error('Error obteniendo detalles', error)
     }
   }
   
   onMounted(() => {
+    getDetalles()
     datosRepuestos()
   })
   </script>

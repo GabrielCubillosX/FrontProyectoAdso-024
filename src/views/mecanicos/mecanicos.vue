@@ -17,7 +17,7 @@
   
             </Formulario>
   
-            <el-table :data="Mecanicos" stripe style="width: 100%">
+            <el-table :data="mecanicos" stripe style="width: 100%">
                 <el-table-column prop="nombres" label="Nombres" />
                 <el-table-column prop="apellidos" label="Apellidos" />
                 <el-table-column prop="telefono" label="Telefono" />
@@ -55,7 +55,7 @@
   const formRef = ref()
   const dataMecanicosById = ref()
   const areas = ref([])
-  const Mecanicos = ref([])
+  const mecanicos = ref([])
   
   
   const abrirFormulario = () => {
@@ -98,7 +98,7 @@
                 console.log(response);
                 formRef.value?.limpiarFormulario()
                 ElMessage({
-                    message: 'El cargo se creó con exito    .',
+                    message: 'El mecanico se creó con exito    .',
                     type: 'success',
                 })
                 datosMecanico()
@@ -214,7 +214,7 @@
     try {
         axios.get(url)
             .then(function (response) {
-                Mecanicos.value = response.data.result
+                mecanicos.value = response.data.result
                // console.log(response);
   
             })
@@ -228,32 +228,13 @@
   
   
   }
-  const getAreas = async () => {
-  
-    const url = 'http://127.0.0.1:8000/api/areas/datos'
-  
-    try {
-        axios.get(url)
-            .then(function (response) {
-                areas.value = response.data.result
-               // console.log(response);
-  
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-  
-    } catch (error) {
-        console.error('error crear mecanico ', error)
-    }
+
   
   
-  
-  
-  }
+
   
   onMounted(() => {
-  /*   getAreas() */
+ 
     datosMecanico()
   })
   </script>

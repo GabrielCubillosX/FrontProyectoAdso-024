@@ -98,7 +98,7 @@ const crearContacto = async () => {
               console.log(response);
               formRef.value?.limpiarFormulario()
               ElMessage({
-                  message: 'El cargo se creó con exito    .',
+                  message: 'El contacto se creó con exito    .',
                   type: 'success',
               })
               datosContacto()
@@ -131,7 +131,7 @@ const actualizarContacto = async () => {
               console.log(response);
               formRef.value?.limpiarFormulario()
               ElMessage({
-                  message: 'El cargo se actualizó con exito    .',
+                  message: 'El contacto se actualizó con exito    .',
                   type: 'success',
               })
               datosContacto()
@@ -143,7 +143,7 @@ const actualizarContacto = async () => {
           });
 
   } catch (error) {
-      console.error('error crear cargo ', error)
+      console.error('error crear contacto ', error)
   }
 
 }
@@ -161,7 +161,7 @@ const datosById = async (id) => {
       return (await response).data.result
 
   } catch (error) {
-      console.error('error crear cargo ', error)
+      console.error('error crear contacto ', error)
   }
 
 }
@@ -170,7 +170,7 @@ const eliminarContacto = async (id) => {
   const url = 'http://127.0.0.1:8000/api/d_contactos/delete'
 
   ElMessageBox.confirm(
-      'Esta seguro de eliminar el cargo ',
+      'Esta seguro de eliminar el contacto ',
       'Eliminar Registro',
       {
           confirmButtonText: 'SI',
@@ -191,7 +191,7 @@ const eliminarContacto = async (id) => {
                   });
 
           } catch (error) {
-              console.error('error crear cargo ', error)
+              console.error('error crear contacto ', error)
           }
           ElMessage({
               type: 'success',
@@ -222,7 +222,7 @@ const datosContacto = async () => {
           });
 
   } catch (error) {
-      console.error('error crear cargo ', error)
+      console.error('error crear contacto ', error)
   }
 
 
@@ -243,7 +243,7 @@ const getAreas = async () => {
           });
 
   } catch (error) {
-      console.error('error crear cargo ', error)
+      console.error('error crear contacto ', error)
   }
 
 

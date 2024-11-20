@@ -17,11 +17,11 @@
       <el-menu-item index="contactos">Contactos</el-menu-item>
       <el-menu-item index="mecanicos">Mecanicos</el-menu-item>
       <el-menu-item index="propietarios">Propietarios</el-menu-item>
-      <el-menu-item index="repuestos">Repuestos</el-menu-item>
       <el-menu-item index="servicios">Servicios</el-menu-item>
-      <el-menu-item index="vehiculos">Vehiculos</el-menu-item>
       <el-menu-item index="modeloauto">Modelo Vehiculos</el-menu-item>
       <el-menu-item index="detallerepuestos">Informacion Repuestos</el-menu-item>
+      <el-menu-item index="repuestos">Repuestos</el-menu-item>
+      <el-menu-item index="vehiculos">Vehiculos</el-menu-item>
     </el-sub-menu>
 
   </el-menu>

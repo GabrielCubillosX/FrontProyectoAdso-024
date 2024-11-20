@@ -9,7 +9,7 @@
             <el-row :gutter="20">
               <el-col :xs="24" :sm="24" :md="24" :lg="24" :xl="24">
                 <FormModeloAuto v-model:is-open="mostrarFormulario" :is-edit="editandoFormulario" ref="formRef"
-                    :areas="areas" :dataValue="dataAutoById" />
+                     :dataValue="dataAutoById" />
               </el-col>
             </el-row>
           </template>

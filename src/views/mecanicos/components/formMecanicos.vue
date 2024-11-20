@@ -80,10 +80,10 @@ const validarFormulario = () => {
   })
 }
 
-// Validación para asegurarse de que el campo solo tenga números
+
 const validarNumeros = () => {
-  formulario.telefono = formulario.telefono.replace(/[^0-9]/g, '');  // Solo deja los números
-  formulario.telefono = formulario.telefono.toString(); // Asegura que se guarde como string
+  formulario.telefono = formulario.telefono.replace(/[^0-9]/g, '');  
+  formulario.telefono = formulario.telefono.toString(); 
 }
 
 watch(

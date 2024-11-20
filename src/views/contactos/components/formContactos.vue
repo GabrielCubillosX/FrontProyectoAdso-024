@@ -29,6 +29,7 @@ const propiedad = defineProps({
 
 function validarNumeros() {
   formulario.telefono = formulario.telefono.replace(/[^0-9]/g, '');
+  formulario.telefono = formulario.telefono.toString(); 
 }
 
 const formSize = ref('default')
