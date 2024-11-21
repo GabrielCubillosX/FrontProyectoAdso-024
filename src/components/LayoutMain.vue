@@ -1,20 +1,36 @@
 <script setup>
-import NavBar from './NavBar.vue' 
-import SideBar from './SideBar.vue'
+import NavBar from './NavBar.vue';
+import SideBar from './SideBar.vue';
 </script>
 
 <template>
-  <div class="common-layout">
+  <el-container style="height: 100vh;">
+    <el-header>
+      <NavBar />
+    </el-header>
+    
     <el-container>
-      <el-header><NavBar></NavBar></el-header>
-      <el-container>
-        <el-aside width="400px"><SideBar></SideBar></el-aside>
-        <el-main>Main</el-main>
-      </el-container>
+      <el-aside width="250px">
+        <SideBar/>
+      </el-aside>
+
+      <el-main class="main-content">
+        <slot name="slotLayout"></slot>
+      </el-main>
     </el-container>
-  </div>
+  </el-container>
 </template>
 
+<style scoped>
+.el-header {
+  padding: 0;
+}
 
-<style>
+.el-aside {
+  background-color: #f4f4f4;
+}
+
+.main-content {
+  position: relative;
+}
 </style>

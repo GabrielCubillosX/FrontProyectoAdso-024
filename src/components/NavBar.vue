@@ -3,15 +3,17 @@
       :default-active="activeIndex"
       class="el-menu-demo"
       mode="horizontal"
+      background-color= #a4daf5
       :ellipsis="false"
       @select="handleSelect"
     >
       <el-menu-item index="0">
         <img
-          style="width: 100px"
-          src=""
-          alt="Element logo"
+          style="width: 55px"
+          src="https://cdn.worldvectorlogo.com/logos/volkswagen-10.svg"
+          alt="Taller Volkswagen"
         />
+        <h1 style="margin-left: 10px;">Taller Volkswagen</h1>
       </el-menu-item>
       <el-sub-menu index="1">
         <template #title>Gabriel Cubillos</template>
@@ -36,13 +38,13 @@
   }
 
  header, .el-menu--horizontal{
-    background-color:rgb(0, 0, 0) ;
     font-family: poppins;
   }
   li.el-sub-menu > div{
     font-size: 17px;
   }
-  .el-menu--horizontal>.el-sub-menu .el-sub-menu__title{
-    color: aliceblue;
+
+  #app > section > header > ul{
+    border-bottom-right-radius: 20px;
   }
   </style>
